@@ -5,12 +5,12 @@ const toFColor = val => {
     val = typeof val === "string" ? val.trim() : val;
     const c16 = color(val)
       .hex()
-      .replace(/^#/, "0x");
+      .replace(/^#/, "0xFF");
 
-    return `Color(${c16}00)`;
+    return `Color(${c16})`;
   } catch (e) {
-    const c16 = (val + "").replace(/^#/, "0x");
-    return `Color(${c16}00)`;
+    const c16 = (val + "").replace(/^#/, "0xFF");
+    return `Color(${c16})`;
   }
 };
 
